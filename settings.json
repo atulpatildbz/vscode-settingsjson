@@ -1,0 +1,61 @@
+
+{
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "window.zoomLevel": -1,
+  "editor.minimap.enabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.scrollback": 2000,
+  "explorer.confirmDelete": false,
+  "files.eol": "\n",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "tabnine.experimentalAutoImports": true,
+  // save and run in case prettier fails
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": ".*\\.js",
+        "cmd": "prettier --write ${file}"
+      }
+    ]
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.lineNumbers": "relative",
+  // vim settings
+  "vim.handleKeys": {
+    "<C-w>": false,
+    "<C-f>": false,
+    "<C-a>": false,
+    "<C-n>": false,
+    "<C-c>": false
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"],
+      "commands": [":w"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>", "d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["<space>", "c"],
+      "after": ["\"", "_", "c"]
+    }
+  ],
+  "vim.easymotion": true,
+  "vim.easymotionMarkerBackgroundColor": "#2a2604",
+  "vim.easymotionMarkerForegroundColorOneChar": "#ebbba4",
+  "vim.leader": "<space>",
+  "vim.useSystemClipboard": true,
+  "files.autoSave": "off"
+}
