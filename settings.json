@@ -1,11 +1,10 @@
-
 {
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-  "window.zoomLevel": -1,
   "editor.minimap.enabled": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "editor.formatOnSave": false,
   "terminal.integrated.scrollback": 2000,
   "explorer.confirmDelete": false,
   "files.eol": "\n",
@@ -21,15 +20,16 @@
     ]
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.lineNumbers": "relative",
+  "editor.tabCompletion": "on",
   // vim settings
   "vim.handleKeys": {
-    "<C-w>": false,
     "<C-f>": false,
     "<C-a>": false,
     "<C-n>": false,
@@ -37,9 +37,12 @@
   },
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"],
-      "commands": [":w"]
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["C-k"],
+      "after": ["C-p"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -50,12 +53,75 @@
     {
       "before": ["<space>", "c"],
       "after": ["\"", "_", "c"]
-    }
+    },
+    {
+      "before": ["<space>", "p"],
+      "after": ["\"", "_", "p"]
+    },
+    {
+      "before": ["<space>", "w"],
+      "commands": [":w!"]
+    },
+    {
+      "before": ["<space>", "q"],
+      "commands": [":q!"]
+    },
+    {
+      "before": ["<space>", "s"],
+      "after": ["<space>", "<space>", "s"]
+    },
+    {
+      "before": ["<space>", "n"],
+      "commands": [":noh"]
+    },
+    {
+      "before" : ["<space>","f"],
+      "after": ["v", "i", "w"],
+      "commands" : [
+        "workbench.action.findInFiles"
+      ]
+    },
+    {
+      "before" : ["<space>","<right>"],
+      "commands" : [
+        "workbench.action.increaseViewSize"
+      ]
+    },
+    {
+      "before": ["C-b"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+        "before": ["<leader>", "t", "f"], "after": [],
+        "commands": [ {"command": "runInTerminal.run", "args": {"name": "f"}} , "workbench.action.terminal.toggleTerminal"]
+    },
+    {
+        "before": ["<leader>", "t", "w"], "after": [],
+        "commands": [ {"command": "runInTerminal.run", "args": {"name": "w"}} ]
+    },
   ],
   "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
   "vim.easymotionMarkerBackgroundColor": "#2a2604",
   "vim.easymotionMarkerForegroundColorOneChar": "#ebbba4",
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
-  "files.autoSave": "off"
+  "vim.highlightedyank.enable": true,
+  "files.autoSave": "off",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "jestRunIt.jestCLIOptions": [
+    "--coverage=false"
+  ],
+  "workbench.colorTheme": "One Dark Pro",
+  "runInTerminal.commands": [
+    {"match": "test\\.js$", "name": "f", "cmd": "npm test -- ${relativeFile} --coverage=false"},
+    {"match": "test\\.js$", "name": "w", "cmd": "npm test -- --watch"},
+  ],
+  "window.title": "${dirty}${activeEditorMedium}${separator}${appName}",
 }
