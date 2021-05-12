@@ -75,32 +75,56 @@
       "commands": [":noh"]
     },
     {
-      "before" : ["<space>","f"],
+      "before": ["<space>", "f"],
       "after": ["v", "i", "w"],
-      "commands" : [
-        "workbench.action.findInFiles"
-      ]
+      "commands": ["workbench.action.findInFiles"]
     },
     {
-      "before" : ["<space>","<right>"],
-      "commands" : [
-        "workbench.action.increaseViewSize"
-      ]
+      "before": ["<space>", "<right>"],
+      "commands": ["workbench.action.increaseViewSize"]
     },
     {
       "before": ["C-b"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-        "before": ["<leader>", "t", "f"], "after": [],
-        "commands": [ {"command": "runInTerminal.run", "args": {"name": "f"}} , "workbench.action.terminal.toggleTerminal"]
+      "before": ["<leader>", "t", "f"],
+      "after": [],
+      "commands": [
+        { "command": "runInTerminal.run", "args": { "name": "f" } },
+        "workbench.action.terminal.toggleTerminal"
+      ]
     },
     {
-        "before": ["<leader>", "t", "w"], "after": [],
-        "commands": [ {"command": "runInTerminal.run", "args": {"name": "w"}} ]
+      "before": ["<leader>", "t", "w"],
+      "after": [],
+      "commands": [{ "command": "runInTerminal.run", "args": { "name": "w" } }]
     },
+    {
+      "before": ["<leader>", "y", "p"],
+      "commands": ["copyRelativeFilePath"]
+    },
+    {
+      "before": ["<leader>", "Y"],
+      "commands": ["copyFilePath"]
+    },
+    {
+      "before": ["]", "c"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      "before": ["[", "c"],
+      "commands": ["workbench.action.editor.previousChange"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
   ],
   "vim.easymotion": true,
+  "vim.statusBarColorControl": false,
   "vim.incsearch": true,
   "vim.hlsearch": true,
   "vim.easymotionMarkerBackgroundColor": "#2a2604",
@@ -111,17 +135,19 @@
   "files.autoSave": "off",
   "workbench.editorAssociations": [
     {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
+      "viewType": "jupyter.notebook.ipynb", "filenamePattern": "*.ipynb"
     }
   ],
-  "jestRunIt.jestCLIOptions": [
-    "--coverage=false"
-  ],
-  "workbench.colorTheme": "One Dark Pro",
+  "jestRunIt.jestCLIOptions": ["--coverage=false"],
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "runInTerminal.commands": [
-    {"match": "test\\.js$", "name": "f", "cmd": "npm test -- ${relativeFile} --coverage=false"},
-    {"match": "test\\.js$", "name": "w", "cmd": "npm test -- --watch"},
+    {
+      "match": "test\\.js$",
+      "name": "f",
+      "cmd": "npm test -- ${relativeFile} --coverage=false"
+    },
+    { "match": "test\\.js$", "name": "w", "cmd": "npm test -- --watch" }
   ],
   "window.title": "${dirty}${activeEditorMedium}${separator}${appName}",
+  "glassit.alpha": 245,
 }
