@@ -1,153 +1,252 @@
 {
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-  "editor.minimap.enabled": false,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.formatOnSave": false,
-  "terminal.integrated.scrollback": 2000,
-  "explorer.confirmDelete": false,
-  "files.eol": "\n",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "tabnine.experimentalAutoImports": true,
-  // save and run in case prettier fails
-  "saveAndRun": {
-    "commands": [
-      {
-        "match": ".*\\.js",
-        "cmd": "prettier --write ${file}"
-      }
-    ]
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.lineNumbers": "relative",
-  "editor.tabCompletion": "on",
-  // vim settings
-  "vim.handleKeys": {
-    "<C-f>": false,
-    "<C-a>": false,
-    "<C-n>": false,
-    "<C-c>": false
-  },
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["C-k"],
-      "after": ["C-p"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<space>", "d"],
-      "after": ["\"", "_", "d"]
-    },
-    {
-      "before": ["<space>", "c"],
-      "after": ["\"", "_", "c"]
-    },
-    {
-      "before": ["<space>", "p"],
-      "after": ["\"", "_", "p"]
-    },
-    {
-      "before": ["<space>", "w"],
-      "commands": [":w!"]
-    },
-    {
-      "before": ["<space>", "q"],
-      "commands": [":q!"]
-    },
-    {
-      "before": ["<space>", "s"],
-      "after": ["<space>", "<space>", "s"]
-    },
-    {
-      "before": ["<space>", "n"],
-      "commands": [":noh"]
-    },
-    {
-      "before": ["<space>", "f"],
-      "after": ["v", "i", "w"],
-      "commands": ["workbench.action.findInFiles"]
-    },
-    {
-      "before": ["<space>", "<right>"],
-      "commands": ["workbench.action.increaseViewSize"]
-    },
-    {
-      "before": ["C-b"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
-    {
-      "before": ["<leader>", "t", "f"],
-      "after": [],
-      "commands": [
-        { "command": "runInTerminal.run", "args": { "name": "f" } },
-        "workbench.action.terminal.toggleTerminal"
-      ]
-    },
-    {
-      "before": ["<leader>", "t", "w"],
-      "after": [],
-      "commands": [{ "command": "runInTerminal.run", "args": { "name": "w" } }]
-    },
-    {
-      "before": ["<leader>", "y", "p"],
-      "commands": ["copyRelativeFilePath"]
-    },
-    {
-      "before": ["<leader>", "Y"],
-      "commands": ["copyFilePath"]
-    },
-    {
-      "before": ["]", "c"],
-      "commands": ["workbench.action.editor.nextChange"]
-    },
-    {
-      "before": ["[", "c"],
-      "commands": ["workbench.action.editor.previousChange"]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["p"],
-      "after": ["p", "g", "v", "y"]
-    }
-  ],
-  "vim.easymotion": true,
-  "vim.statusBarColorControl": false,
-  "vim.incsearch": true,
-  "vim.hlsearch": true,
-  "vim.easymotionMarkerBackgroundColor": "#2a2604",
-  "vim.easymotionMarkerForegroundColorOneChar": "#ebbba4",
-  "vim.leader": "<space>",
-  "vim.useSystemClipboard": true,
-  "vim.highlightedyank.enable": true,
-  "files.autoSave": "off",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb", "filenamePattern": "*.ipynb"
-    }
-  ],
-  "jestRunIt.jestCLIOptions": ["--coverage=false"],
-  "workbench.colorTheme": "Gruvbox Dark Hard",
-  "runInTerminal.commands": [
-    {
-      "match": "test\\.js$",
-      "name": "f",
-      "cmd": "npm test -- ${relativeFile} --coverage=false"
-    },
-    { "match": "test\\.js$", "name": "w", "cmd": "npm test -- --watch" }
-  ],
-  "window.title": "${dirty}${activeEditorMedium}${separator}${appName}",
-  "glassit.alpha": 245,
+    "editor.inlineSuggest.enabled": true,
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-a>": false,
+        "<C-n>": false,
+        "<C-c>": false
+      },
+      "vim.insertModeKeyBindings": [
+        {
+          "before": ["j", "k"],
+          "after": ["<Esc>"]
+        },
+        {
+          "before": ["C-k"],
+          "after": ["C-p"]
+        },
+        {
+          "before": ["C-j"],
+          "commands": ["editor.action.insertSnippet"]
+        }
+      ],
+      "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["s"],
+          "after": ["<leader>", "<leader>", "s"]
+        },
+        {
+          "before": ["<space>", "d"],
+          "after": ["\"", "_", "d"]
+        },
+        {
+          "before": ["<space>", "c"],
+          "after": ["\"", "_", "c"]
+        },
+        {
+          "before": ["<space>", "p"],
+          "after": ["\"", "_", "p"]
+        },
+        {
+          "before": ["<space>", "w"],
+          "commands": [":w!"]
+        },
+        {
+          "before": ["<space>", "q"],
+          "commands": [":q!"]
+        },
+        {
+          "before": ["<space>", "s"],
+          "after": ["<space>", "<space>", "s"]
+        },
+        {
+          "before": ["<space>", "n"],
+          "commands": [":noh"]
+        },
+        {
+          "before": ["<space>", "f"],
+          "after": ["v", "i", "w"],
+          "commands": ["workbench.action.findInFiles"]
+        },
+        {
+          "before": ["<space>", "<right>"],
+          "commands": ["workbench.action.increaseViewSize"]
+        },
+        {
+          "before": ["<space>", "<left>"],
+          "commands": ["workbench.action.decreaseViewSize"]
+        },
+        {
+          "before": ["<space>", "<up>"],
+          "commands": ["workbench.action.minimizeOtherEditors"]
+        },
+        {
+          "before": ["<space>", "<down>"],
+          "commands": ["workbench.action.evenEditorWidths"]
+        },
+        {
+          "before": ["C-b"],
+          "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+          "before": ["<space>", "t", "f"],
+          "after": [],
+          "commands": [
+            { "command": "runInTerminal.run", "args": { "name": "f" } },
+            "workbench.action.terminal.toggleTerminal"
+          ]
+        },
+        {
+          "before": ["<space>", "t", "w"],
+          "after": [],
+          "commands": [{ "command": "runInTerminal.run", "args": { "name": "w" } }]
+        },
+        {
+          "before": ["<space>", "y", "p"],
+          "commands": ["copyRelativeFilePath"]
+        },
+        {
+          "before": ["<space>", "Y"],
+          "commands": ["copyFilePath"]
+        },
+        {
+          "before": ["]", "c"],
+          "commands": ["workbench.action.editor.nextChange"]
+        },
+        {
+          "before": ["[", "c"],
+          "commands": ["workbench.action.editor.previousChange"]
+        },
+        {
+          "before": ["<space>", "m"],
+          "commands": ["bookmarks.toggleLabeled"]
+        },
+        {
+          "before": ["<space>", "b"],
+          "commands": ["bookmarks.listFromAllFiles"]
+        },
+        // this undo redo is temporary fix, keep checking https://github.com/VSCodeVim/Vim/issues/1490 for solution
+        {
+          "before": ["u"],
+          "commands": ["undo"]
+        },
+        {
+          "before": ["C-r"],
+          "commands": ["redo"]
+        },
+        {
+          "before": ["<tab>"],
+          "after": ["g", "t"]
+        },
+        {
+          "before": ["<S-tab>"],
+          "after": ["g", "T"]
+        },
+        {
+          "before": ["<S-y>"],
+          "after": ["y", "$"]
+        },
+        // {
+        //   "before": ["n"],
+        //   "after": ["n", "z", "z"]
+        // },
+        {
+          "before": ["<space>", "l", "f"],
+          "after": ["A"],
+          "commands": [
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/console.info($2)/}"
+              }
+            },
+            "extension.vim_escape"
+          ]
+        },
+        {
+          "before": ["<space>", "l", "c"],
+          "after": ["A"],
+          "commands": [
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "\nconsole.info(\"${CLIPBOARD}: \", ${CLIPBOARD})"
+              }
+            },
+            "extension.vim_escape"
+          ]
+        }
+      ],
+      "vim.visualModeKeyBindingsNonRecursive": [
+        {
+          "before": ["p"],
+          "after": ["p", "g", "v", "y"]
+        },
+        {
+          "before": [">"],
+          "after": [">", "g", "v"]
+        },
+        {
+          "before": ["<"],
+          "after": ["<", "g", "v"]
+        }
+      ],
+      "vim.easymotion": true,
+      "vim.statusBarColorControl": false,
+      "vim.incsearch": true,
+      "vim.hlsearch": true,
+      "vim.easymotionMarkerBackgroundColor": "#2a2604",
+      "vim.easymotionMarkerForegroundColorOneChar": "#ebbba4",
+      "vim.leader": "\\",
+      "vim.useSystemClipboard": true,
+      "vim.highlightedyank.enable": true,
+      "editor.lineNumbers": "relative",
+      "editor.minimap.enabled": false,
+      "editor.bracketPairColorization.enabled": true,
+      "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "prettier.configPath": ".prettierrc",
+      "tabnine.experimentalAutoImports": true,
+      "remote.SSH.remotePlatform": {
+        "172.16.23.173_expires_on_11th_Oct": "linux",
+        "172.16.21.70expires11Nov-garden": "linux",
+        "172.16.22.228expires24Nov-black-canary": "linux",
+        "172.16.21.223aayush": "linux",
+        "172.16.24.153expires2Dec-donna-troy": "linux",
+        "172.16.23.177atulp": "linux",
+        "172.16.25.221": "linux"
+      },
+      "jestRunIt.jestCLIOptions": [
+        "--coverage=False"
+      ],
+      "editor.wordWrap": "on",
+      "diffEditor.ignoreTrimWhitespace": false,
+      "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": false
+      },
+      "workbench.colorCustomizations": {
+        "[Material Theme Darker]": {
+          "activityBarBadge.background": "#F44336",
+          "activityBar.activeBorder": "#F44336",
+          "list.activeSelectionForeground": "#F44336",
+          "list.inactiveSelectionForeground": "#F44336",
+          "list.highlightForeground": "#F44336",
+          "scrollbarSlider.activeBackground": "#F4433650",
+          "editorSuggestWidget.highlightForeground": "#F44336",
+          "textLink.foreground": "#F44336",
+          "progressBar.background": "#F44336",
+          "pickerGroup.foreground": "#F44336",
+          "tab.activeBorder": "#F44336",
+          "notificationLink.foreground": "#F44336",
+          "editorWidget.resizeBorder": "#F44336",
+          "editorWidget.border": "#F44336",
+          "settings.modifiedItemIndicator": "#F44336",
+          "settings.headerForeground": "#F44336",
+          "panelTitle.activeBorder": "#F44336",
+          "breadcrumb.activeSelectionForeground": "#F44336",
+          "menu.selectionForeground": "#F44336",
+          "menubar.selectionForeground": "#F44336",
+          "editor.findMatchBorder": "#F44336",
+          "selection.background": "#F4433640",
+          "statusBarItem.remoteBackground": "#F44336"
+        }
+      },
+      "materialTheme.accent": "Tomato",
+      "cSpell.userWords": [
+        "cnames"
+      ],
 }
