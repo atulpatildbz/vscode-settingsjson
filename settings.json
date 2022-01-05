@@ -14,10 +14,6 @@
         {
           "before": ["C-k"],
           "after": ["C-p"]
-        },
-        {
-          "before": ["C-j"],
-          "commands": ["editor.action.insertSnippet"]
         }
       ],
       "vim.normalModeKeyBindingsNonRecursive": [
@@ -108,12 +104,20 @@
           "commands": ["workbench.action.editor.previousChange"]
         },
         {
-          "before": ["<space>", "m"],
+          "before": ["<space>", "m", "c"],
           "commands": ["bookmarks.toggleLabeled"]
         },
         {
-          "before": ["<space>", "b"],
+          "before": ["<space>", "m", "m"],
+          "commands": ["bookmarks.toggle"]
+        },
+        {
+          "before": ["<space>", "m", "l"],
           "commands": ["bookmarks.listFromAllFiles"]
+        },
+        {
+          "before": ["<space>", "m", "d"],
+          "commands": ["bookmarks.clear"]
         },
         // this undo redo is temporary fix, keep checking https://github.com/VSCodeVim/Vim/issues/1490 for solution
         {
@@ -165,6 +169,10 @@
             },
             "extension.vim_escape"
           ]
+        },
+        {
+          "before": ["<space>", "h", "p"],
+          "commands": ["editor.action.dirtydiff.next"]
         }
       ],
       "vim.visualModeKeyBindingsNonRecursive": [
@@ -205,7 +213,9 @@
         "172.16.21.223aayush": "linux",
         "172.16.24.153expires2Dec-donna-troy": "linux",
         "172.16.23.177atulp": "linux",
-        "172.16.25.221": "linux"
+        "172.16.25.221": "linux",
+        "172.16.25.221visalia-hulk": "linux",
+        "172.16.25.7": "linux"
       },
       "jestRunIt.jestCLIOptions": [
         "--coverage=False"
@@ -249,4 +259,5 @@
       "cSpell.userWords": [
         "cnames"
       ],
+      "workbench.colorTheme": "Gruvbox Dark Hard",
 }
